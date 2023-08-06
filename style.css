@@ -1,0 +1,184 @@
+/* a css styling reset rule from https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  .red-box {
+      border: 1px solid red;
+  }
+  
+  .flex{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .mb-1 {
+      margin-bottom: 1rem;
+  }
+  
+  .mr-1 {
+      margin-right: 1rem;
+  }
+  
+  
+  main {
+      width: 100vw;
+      height: 100vh;
+  }
+  
+  h1{
+      font-size: 4rem;
+      text-align: center;
+  }
+  
+  form {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  input[type="email"], input[type="password"], input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.75rem;
+      border: none;
+      outline: 1px solid #dadcdf;
+  }
+  
+  button {
+      border-radius: 0.25rem;
+      padding: 0.5rem;
+      background-color: #fff;
+      margin-bottom: 0.75rem;
+      border: none;
+      outline: 1px solid #dadcdf;
+  }
+  
+  span {
+      /* border: 1px solid #dadcdf; */
+      display: flex;
+      justify-content: center;
+  }
+  
+  a {
+      text-decoration: none;
+      color: #8963dd;
+  }
+  
+  
+  
+  
+  /* Use media queries and a container class utility: */
+  /* xs */
+  @media (min-width: 475px) {
+      .main {
+          max-width: 475px;
+      }
+  
+      form {
+          width: 50%;
+      }
+      
+  }
+  
+  /* sm */
+  @media (min-width: 640px) {
+      .main {
+          max-width: 640px;
+      }
+      
+      form {
+          width: 40%;
+      }
+  }
+  
+  /* md */
+  @media (min-width: 768px) {
+      .main {
+          max-width: 768px;
+      }
+      
+      form {
+          width: 30%;
+      }
+  }
+  
+  /* lg */
+  @media (min-width: 1024px) {
+      .main {
+          max-width: 1024px;
+      }
+  
+      form {
+          width: 25%;
+      }
+      
+  }
+  
+  /* xl */
+  @media (min-width: 1288px) {
+      .main {
+          max-width: 1288px;
+      }
+      
+      form {
+          width: 20%;
+      }
+  }
+  
+  /* 2xl */
+  @media (min-width: 1536px) {
+      .main {
+          max-width: 1536px;
+      }
+  
+      form {
+          width: 15%;
+      }
+      
+  }   
