@@ -21,55 +21,21 @@ const fetchSupabase = async () => {
 console.log('Supabase Instance: ', supabase)
 fetchSupabase()
 
-
-const main = document.querySelector('main');
 const loginForm = document.querySelector('#login-form');
 const signupForm = document.querySelector('#signup-form');
-const greeting = document.querySelector('h1');
-const loginLink = document.querySelector('a');
 
+const signupFormData = new FormData(signupForm);
+const username = signupFormData.get('username');
+const email = signupFormData.get('email');
+const password = signupFormData.get('password');
 
-loginLink.addEventListener('click', () => {
-    console.log('login clicked');
-    
-    console.log('this is supposed to be the login: ', login);
-
-    setTimeout(() => {
-        loginLink.style.backgroundColor = 'red';
-        loginLink.style.color = 'white';
-        loginLink.innerHTML = 'logged in';
-    }, 1000);
-
-    signupForm.innerHTML = '';
-
-    greeting.innerHTML = 'Welcome back to EMTF';
-
-    loginForm.innerHTML = 
-        `   
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Enter your email" required>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="Enter your password" required>
-        <button type="submit" class="sign-up mb-1">Login</button>
-        <span>
-            <p class="mr-1">Don't have an account?</p>
-            <a href="#">Sign up</a>
-        </span>
-        `
-}); 
+const loginFormData = new FormData(loginForm);
+const loginEmail = loginFormData.get('email');
+const loginPassword = loginFormData.get('password');
 
 
 signupForm.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission
-
-    const signupFormData = new FormData(signupForm);
-    const username = signupFormData.get('username');
-    const email = signupFormData.get('email');
-    const password = signupFormData.get('password');
-
-    const loginFormData = new FormData(loginForm);
-    const loginEmail = loginFormData.get('email');
-    const loginPassword = loginFormData.get('password');
 
     // Validate the form data (if needed)
     if (!email || !password) {
@@ -111,14 +77,6 @@ signupForm.addEventListener('submit', function (event) {
     .then(response => {
         console.log('Sign-up successful:', response);
         // Optionally, you can redirect the user to a login page after successful sign-up.
-        main.innerHTML = '';
-        main.innerHTML = 
-        `
-        <h1>Sign-up Successful!</h1>
-        <p>Congratulations, you have successfully signed up. Please proceed to the login page.</p>
-        <button id="goToLoginPage">Go to Login</button>
-        `
-        
     })
     .catch(error => {
         console.error('Sign-up error:', error);
@@ -132,10 +90,5 @@ signupForm.addEventListener('submit', function (event) {
     })
     .catch(error => {
         console.error('Login error:', error);
-    });    
-    
-    document.getElementById('goToLoginPage').addEventListener('click', function () {
-        window.location.href = '/login.html'; // Change 'login.html' to your actual login page URL
-    });
-    
+    });       
 });
