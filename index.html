@@ -9,46 +9,32 @@
 <body>
     <main class="flex">
         <h1>Welcome to EMTF</h1>
-        <form action="">
+        <form id='signup-form' action="">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" placeholder="Enter a username">
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password">
-            <button class="sign-up mb-1">Sign Up</button>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            <button type="submit" class="sign-up mb-1">Sign Up</button>
             <span>
                 <p class="mr-1">Already have an account?</p>
                 <a href="#">Login</a>
             </span>
         </form>
+        <form id="login-form" action="">
+            
+        </form>
+        <div id="login-page">
+
+        </div>
     </main>
 
     <!-- connecting to the supabase backend -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script type="module">
-        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
-        const supabase = createClient('https://zdtqafdowtsaintbuhoy.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkdHFhZmRvd3RzYWludGJ1aG95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTEyNjA2NTAsImV4cCI6MjAwNjgzNjY1MH0.0ZBKpQuGLS_jTkecr97GAaqRktZ0gQcPjb83EH_SAhk')
-        // const supabaseUrl = process.env.SUPABASE_URL
-        // const supabaseKey = process.env.SUPABASE_KEY
-        // const mySupabase = createClient(supabaseUrl, supabaseKey)
-
-        const fetchSupabase = async () => {
-            // getting data from the users table
-            const { data, error } = await supabase
-                .from('users')
-                .select('*')
-
-                console.log('fetching data');
-                if (error) console.log('error', error)
-                console.log('data', data)
-        }
-
-        console.log('Supabase Instance: ', supabase)
-        fetchSupabase()
-        // ...
-      </script>
+    <!-- <script type="module">
+        
+    </script> -->
     <!-- js file to handle interaction on the website -->
     <script type="module" src="/script.js"></script>
 </body>
