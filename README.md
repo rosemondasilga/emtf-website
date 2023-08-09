@@ -1,5 +1,4 @@
 # Heading level 1
-=========================================================
 Open command prompt and enter the directory of your choice
 Type the command **git clone https://github.com/rosemondasilga/emtf-website.git**(make sure you have git installed)  and press enter
 
